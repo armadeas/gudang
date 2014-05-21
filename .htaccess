@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+RewriteRule  ^/?ajax\/(.*)$ /ajax.php?$1 [NC,QSA,L]
+RewriteCond $1 !^(index\.php|assets|cjax|robots\.txt|ajax)
